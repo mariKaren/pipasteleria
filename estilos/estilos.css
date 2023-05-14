@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ovo&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Ovo", serif;
+}
+
 header {
   height: 180px;
 }
@@ -32,6 +37,8 @@ h1 {
   height: 550px;
   text-align: center;
   margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
   font-family: "Ovo", serif;
 }
 #contProductos .card .imgTorta {
@@ -50,11 +57,30 @@ h1 {
   background-color: #65ADA6;
   color: white;
 }
-#contProductos .card .precioAgregar0, #contProductos .card .precioAgregar5 {
+#contProductos .card .precioAgregar0, #contProductos .card .precioAgregar5, #contProductos .card .precioAgregar4 {
   padding-top: 20%;
 }
-#contProductos .card .precioAgregar4, #contProductos .card .precioAgregar3, #contProductos .card .precioAgregar7, #contProductos .card .precioAgregar8 {
+#contProductos .card .precioAgregar3, #contProductos .card .precioAgregar7, #contProductos .card .precioAgregar8 {
   padding-top: 10%;
+}
+
+.contPersonalizadas .personalizadas {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../multimedia/siete.jpg);
+  background-size: cover;
+}
+.contPersonalizadas .personalizadas h2 {
+  color: #FBF9F9;
+  font-family: "Ibarra Real Nova", serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #AD8776;
+}
+.contPersonalizadas h3 {
+  font-family: "Ibarra Real Nova", serif;
+  margin: 20px;
 }
 
 .tablaCarrito th {

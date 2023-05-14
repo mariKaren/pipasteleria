@@ -14,6 +14,12 @@ $colorrosaclaro:#FFEAE0;
 $colorverde:#65ADA6;
 $colormarron:#AD8776;
 
+//deberia realizar el reseteo universal
+*{
+    box-sizing: border-box;
+    font-family: $letraUno;
+}
+
 
 //HEADER
 header {
@@ -35,6 +41,7 @@ header {
 }
 
 //MAIN
+//inicio tortas clasicas
 h1{
     padding: 10px;
     text-align: center;
@@ -51,6 +58,8 @@ h1{
         height: 550px;
         text-align: center;
         margin-bottom: 30px;
+        margin-right: 10px;
+        margin-left: 10px;
         font-family: $letraUno;
         .imgTorta{
             margin-top: 10px;
@@ -69,10 +78,10 @@ h1{
             background-color: $colorverde;
             color: white;
         }
-        .precioAgregar0,.precioAgregar5{
+        .precioAgregar0,.precioAgregar5,.precioAgregar4{
             padding-top: 20%;
         }
-        .precioAgregar4,.precioAgregar3, .precioAgregar7,.precioAgregar8{
+        .precioAgregar3, .precioAgregar7,.precioAgregar8{
             padding-top: 10%;
         }
         
@@ -80,6 +89,31 @@ h1{
 
 }
 
+//inicio tortas personalizadas
+.contPersonalizadas{
+    .personalizadas{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image:linear-gradient(
+            rgba(black, 0.5),
+            rgba(black, 0.5)
+          ), url(../multimedia/siete.jpg);
+        background-size: cover;
+        h2{
+            color: $colorgris;
+            font-family: $letraTitulo;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px $colormarron ;
+        }
+    }
+    h3{
+        font-family: $letraTitulo;
+        margin: 20px;
+    }
+    
+}
 
 .tablaCarrito {
     th {
