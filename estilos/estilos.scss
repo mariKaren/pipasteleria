@@ -1,0 +1,92 @@
+//agregar cartel de carrito
+//agregar cartel de personalizadas
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@1,500&display=swap');
+//font-family: 'Ibarra Real Nova', serif;
+@import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
+//Variables
+$letraTitulo:'Ibarra Real Nova', serif;
+$letraUno:'Ovo', serif;
+
+//colores
+$colorgris:#FBF9F9;
+$colorrosalogo:#FBD6C5;
+$colorrosaclaro:#FFEAE0;
+$colorverde:#65ADA6;
+$colormarron:#AD8776;
+
+
+//HEADER
+header {
+    height: 180px;
+
+    .logo {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../multimedia/cinco.jpg);
+        background-size: cover;
+        background-position: center;
+
+        img {
+            height: 90%;
+            width: auto;
+        }
+    }
+}
+
+//MAIN
+h1{
+    padding: 10px;
+    text-align: center;
+    font-family: $letraTitulo;
+}
+
+#contProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .card {
+        width: 320;
+        height: 550px;
+        text-align: center;
+        margin-bottom: 30px;
+        font-family: $letraUno;
+        .imgTorta{
+            margin-top: 10px;
+            height: 40%;
+            width: 80%;
+        }
+        .card-title{
+            /* font-family: $letraTitulo; */
+            font-size:25px;
+        }
+        .card-text-descripcion{
+            text-align: justify;
+        }
+
+        .btnAgregarCarrito{
+            background-color: $colorverde;
+            color: white;
+        }
+        .precioAgregar0,.precioAgregar5{
+            padding-top: 20%;
+        }
+        .precioAgregar4,.precioAgregar3, .precioAgregar7,.precioAgregar8{
+            padding-top: 10%;
+        }
+        
+    }
+
+}
+
+
+.tablaCarrito {
+    th {
+        width: 14.28%;
+    }
+
+    td {
+        width: 14.28%;
+    }
+}
