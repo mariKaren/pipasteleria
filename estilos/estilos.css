@@ -64,7 +64,7 @@ h1 {
   padding-top: 10%;
 }
 
-.contPersonalizadas .personalizadas {
+.contPersonalizadas .tituloPpersonalizadas {
   height: 100px;
   display: flex;
   align-items: center;
@@ -72,15 +72,54 @@ h1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../multimedia/siete.jpg);
   background-size: cover;
 }
-.contPersonalizadas .personalizadas h2 {
+.contPersonalizadas .tituloPpersonalizadas h2 {
   color: #FBF9F9;
   font-family: "Ibarra Real Nova", serif;
   font-size: 2.5rem;
   text-shadow: 2px 2px #AD8776;
 }
-.contPersonalizadas h3 {
+.contPersonalizadas .personalizadas {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 15px;
+}
+.contPersonalizadas .personalizadas h3 {
   font-family: "Ibarra Real Nova", serif;
-  margin: 20px;
+  width: 50%;
+}
+.contPersonalizadas .personalizadas .seleccion {
+  text-align: right;
+  width: 50%;
+}
+.contPersonalizadas .personalizadas .seleccion #selectInspiracion {
+  border: #65ADA6 2px solid;
+}
+.contPersonalizadas .personalizadas .seleccion button {
+  border: #65ADA6 1px solid;
+  background-color: #FBF9F9;
+  color: #65ADA6;
+}
+
+#contInspiraciones {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+#contInspiraciones .inspImg {
+  margin: 15px;
+  width: 20%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #65ADA6;
+}
+#contInspiraciones .inspImg img {
+  width: 80%;
+  height: auto;
 }
 
 .tablaCarrito th {

@@ -5,7 +5,7 @@ const arrayProductos = [{
     nombre: "Lingotes",
     descripcion: "Conjunto de tres lingotes de: Chocotorta, Cheescake con frutos rojos y Lemon pie",
     precio: 5000,
-    imagen: "./multimedia/Lingotes (1).jpg",
+    imagen: "./multimedia/lingotes.jpg",
 },
 {
     id: 1,
@@ -250,3 +250,41 @@ if (carritoEnStorage) {
 imprimirenHTML(arrayProductos);
 buscarEnStorage();
 crearCarrito();
+
+// SECCION INSPIRACIONES
+//primero capturo elemntos
+const selectInspiracion=document.getElementById("selectInspiracion");
+const buscar=document.getElementById("buscar");
+const contInspiraciones=document.getElementById("contInspiraciones");
+
+//funcion que me va a mostrar una vez que haga la seleccion y busque
+function crearHTML(array){
+    contInspiraciones.innerHTML="";
+    for (const torta of array) {
+        contInspiraciones.innerHTML+=`
+        <div class="inspImg">
+        <img src="${torta.imagen}" alt="...">
+        `
+    }
+    
+}
+//Funcion que filtra segun la seleccion
+function tortaFiltro(array,torta) {
+    torta=selectInspiracion.value;
+    if(torta=="todas"){
+        return array;
+    }
+    else{
+        result=array.filter((e)=>e.descripcion==torta);
+        return result
+    }
+}
+
+//evento
+buscar.addEventListener("click",()=>{
+    fetch("./inspiracion.json")
+    .then((response)=>response.json())
+    .then((data)=>{
+        crearHTML(tortaFiltro(data));
+    })
+})
