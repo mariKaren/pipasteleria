@@ -20,6 +20,14 @@ $colormarron:#AD8776;
     font-family: $letraUno;
 }
 
+//titulos
+h2{
+    color: $colorgris;
+    font-family: $letraTitulo;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px $colormarron ;
+}
+
 
 //HEADER
 header {
@@ -101,12 +109,6 @@ h1{
             rgba(black, 0.5)
           ), url(../multimedia/siete.jpg);
         background-size: cover;
-        h2{
-            color: $colorgris;
-            font-family: $letraTitulo;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px $colormarron ;
-        }
     }
     .personalizadas{
         display: flex;
@@ -154,6 +156,27 @@ h1{
     }
 }
 
+//CARRITO DE COMPRAS
+.tituloCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-image:url(../multimedia/seis.jpg);
+    background-position: center;
+    
+}
+.contPCarrito{
+    background-color:$colorgris;
+    text-align: center;
+    .btnBorrar{
+        background-color: $colorrosalogo;
+    }
+    .btnConfirmar{
+        background-color: $colorverde;
+        color: $colorgris;
+    }
+}
 
 .tablaCarrito {
     th {

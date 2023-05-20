@@ -5,6 +5,13 @@
   font-family: "Ovo", serif;
 }
 
+h2 {
+  color: #FBF9F9;
+  font-family: "Ibarra Real Nova", serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #AD8776;
+}
+
 header {
   height: 180px;
 }
@@ -72,12 +79,6 @@ h1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../multimedia/siete.jpg);
   background-size: cover;
 }
-.contPersonalizadas .tituloPpersonalizadas h2 {
-  color: #FBF9F9;
-  font-family: "Ibarra Real Nova", serif;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px #AD8776;
-}
 .contPersonalizadas .personalizadas {
   display: flex;
   flex-wrap: nowrap;
@@ -120,6 +121,27 @@ h1 {
 #contInspiraciones .inspImg img {
   width: 80%;
   height: auto;
+}
+
+.tituloCarrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-image: url(../multimedia/seis.jpg);
+  background-position: center;
+}
+
+.contPCarrito {
+  background-color: #FBF9F9;
+  text-align: center;
+}
+.contPCarrito .btnBorrar {
+  background-color: #FBD6C5;
+}
+.contPCarrito .btnConfirmar {
+  background-color: #65ADA6;
+  color: #FBF9F9;
 }
 
 .tablaCarrito th {

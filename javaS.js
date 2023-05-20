@@ -116,8 +116,8 @@ for (const caja of array) {
 
 // Voy a ir armando el carrito
 //primero voy a capturar el contenedor del mismo
-const contCarrito = document.getElementById("contCarrito");
-
+const contPCarrito = document.getElementById("contPCarrito");
+const tituloCarrito=document.getElementById("tituloCarrito")
 
 //Voy a determinar que va a hacer la funcion agregar al carrito
 function agregarAlCarrito(idCaja) {
@@ -145,9 +145,12 @@ return array.reduce((total, elemento) => total + elemento.resultado, 0);
 function crearCarrito() {
 let total = obtenerPrecioTotal(carrito);
 if (carrito.length >= 1) {
+    tituloCarrito.innerHTML=`<h2>Carrito de compras</h2>`;
+    tituloCarrito.className="tituloCarrito";
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    contCarrito.innerHTML = `
-    <table class="table tablaCarrito table-striped">
+    contPCarrito.className="contPCarrito";
+    contPCarrito.innerHTML = `
+    <table class="table tablaCarrito">
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
@@ -156,18 +159,24 @@ if (carrito.length >= 1) {
                 <th scope="col">Botones</th>
                 <th scope="col">Botones</th>
                 <th scope="col">Precio Parcial</th>
-                <th scope="col"></th>
             </tr>
         </thead>
         <tbody id="cajasEnTabla">
         <tr>
-            <td colspan="5">Precio Final</td>
+            <td>Precio Final</td>
+            <td colspan="4"></td>
             <td>$${total}</td>
-            <td>
-                <button id="borrarCarrito" class="btn btn-primary">Borrar Carrito</button>
-            </td>
             
         </tr>
+        <tr>
+        <td colspan="2"></td>
+        <td class="btnBorrarCarrito">
+            <button id="borrarCarrito" class="btn btnBorrar">Borrar Carrito</button></td>
+        <td>    
+            <button id="confirmarCarrito" class="btn btnConfirmar">Confirmar Carrito</button></td> 
+        <td colspan="2"></td>  
+        </tr>
+
         </tbody>
     </table>`;
 
@@ -179,12 +188,12 @@ if (carrito.length >= 1) {
             <td>$${caja.precio}</td>
             <td>${caja.cantidad}</td>
             <td>
-                <button id="borrarUnidad${caja.id}" class="btn btn-primary">
+                <button id="borrarUnidad${caja.id}" class="btn btnBorrar">
                     Borrar Unidad
                 </button>
             </td>
             <td>
-                <button id="borrarProducto${caja.id}" class="btn btn-primary">
+                <button id="borrarProducto${caja.id}" class="btn btnBorrar">
                     Borrar Producto
                 </button>
             </td>
@@ -201,7 +210,9 @@ if (carrito.length >= 1) {
     let borrarCarrito = document.getElementById("borrarCarrito");
     borrarCarrito.addEventListener("click", () => eliminarCarrito(carrito));
 } else {
-    contCarrito.innerHTML = "";
+    tituloCarrito.innerHTML = "";
+    tituloCarrito.classList.remove("tituloCarrito");
+    contPCarrito.innerHTML = "";
     localStorage.clear();
 }
 
