@@ -149,4 +149,35 @@ h1 {
 }
 .tablaCarrito td {
   width: 14.28%;
+}
+
+footer {
+  margin-top: 50px;
+}
+footer .informacion {
+  display: flex;
+  justify-content: space-around;
+}
+footer .informacion div {
+  text-align: center;
+  width: 33%;
+}
+footer .informacion div h4 {
+  font-size: 26px;
+}
+footer .informacion div p {
+  font-size: 18px;
+}
+footer .copy {
+  background-color: #FFEAE0;
+  display: flex;
+}
+footer .copy p {
+  width: 50%;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+footer .copy .creado {
+  text-align: right;
 }/*# sourceMappingURL=estilos.css.map */

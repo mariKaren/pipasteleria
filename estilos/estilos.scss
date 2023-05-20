@@ -187,3 +187,36 @@ h1{
         width: 14.28%;
     }
 }
+
+//footer
+footer{
+    margin-top: 50px;
+    .informacion{
+        display: flex;
+        justify-content: space-around;
+        div{
+            text-align: center;
+            width: 33%;
+            h4{
+                font-size: 26px;
+            }
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+    .copy{
+        background-color: $colorrosaclaro;
+        display: flex;
+        p{
+            width: 50%;
+            margin-bottom: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .creado{
+            text-align: right;
+        }
+    }
+}
