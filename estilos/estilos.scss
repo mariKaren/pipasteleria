@@ -18,6 +18,7 @@ $colormarron:#AD8776;
 *{
     box-sizing: border-box;
     font-family: $letraUno;
+    outline: none;
 }
 
 //titulos
@@ -30,21 +31,46 @@ h2{
 
 
 //HEADER
-header {
-    height: 180px;
 
-    .logo {
+header {
+    height: 150px;
+    .header {
         height: 100%;
-        justify-content: center;
-        align-items: center;
         background-image: url(../multimedia/cinco.jpg);
         background-size: cover;
         background-position: center;
-
-        img {
-            height: 90%;
-            width: auto;
+        div{
+            width: 10%;
         }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100%;
+            img {
+            height: 95%;
+            width: auto;
+            }
+        }
+        .iconoCarrito{
+            display: flex;
+            align-items: end;
+            justify-content: right;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            .imgCarrito{
+                width: 30px;
+                height: 40px;
+
+            }
+            .circuloCarrito{
+                background-color: $colorrosalogo;
+                border: $colorgris 1px solid;
+            }
+        }
+
+        
     }
 }
 
@@ -190,8 +216,9 @@ h1{
 
 //footer
 footer{
-    margin-top: 50px;
+    
     .informacion{
+        margin-top: 20px;
         display: flex;
         justify-content: space-around;
         div{

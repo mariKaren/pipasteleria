@@ -117,7 +117,8 @@ for (const caja of array) {
 // Voy a ir armando el carrito
 //primero voy a capturar el contenedor del mismo
 const contPCarrito = document.getElementById("contPCarrito");
-const tituloCarrito=document.getElementById("tituloCarrito")
+const tituloCarrito=document.getElementById("tituloCarrito");
+const circuloCarrito=document.getElementById("circuloCarrito");
 
 //Voy a determinar que va a hacer la funcion agregar al carrito
 function agregarAlCarrito(idCaja) {
@@ -145,6 +146,7 @@ return array.reduce((total, elemento) => total + elemento.resultado, 0);
 function crearCarrito() {
 let total = obtenerPrecioTotal(carrito);
 if (carrito.length >= 1) {
+    circuloCarrito.className= " circuloCarrito position-absolute top-0 start-100 translate-middle p-2 rounded-circle";
     tituloCarrito.innerHTML=`<h2>Carrito de compras</h2>`;
     tituloCarrito.className="tituloCarrito";
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -210,6 +212,7 @@ if (carrito.length >= 1) {
     let borrarCarrito = document.getElementById("borrarCarrito");
     borrarCarrito.addEventListener("click", () => eliminarCarrito(carrito));
 } else {
+    circuloCarrito.classList.remove("circuloCarrito","position-absolute", "top-0", "start-100", "translate-middle", "p-2", "rounded-circle");
     tituloCarrito.innerHTML = "";
     tituloCarrito.classList.remove("tituloCarrito");
     contPCarrito.innerHTML = "";
