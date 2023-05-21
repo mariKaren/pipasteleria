@@ -174,10 +174,16 @@ h1{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #65ADA6;
+        border: 2px solid $colorrosaclaro;
         img{
             width: 80%;
-            height: auto;
+            height: 95%;
+        }
+        img:hover{
+            transform: scale(1.3);
+            transition: 1s;
+            box-shadow: 2px 2px 2px 2px $colorverde;
+
         }
     }
 }

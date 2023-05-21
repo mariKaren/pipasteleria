@@ -34,13 +34,37 @@
     "descripcion":"compromiso",  
     "imagen":"./multimedia/compromiso4.jpg"
 },{
-    "nombre":["Torta Infantil","Torta Tres Pisos"],
-    "descripcion":"infantil",
-    "imagen":"./multimedia/infantil1.jpg"
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica1.jpg"
 },{
-    "nombre":["Torta Infantil","Torta Tres Pisos"],
-    "descripcion":"infantil",
-    "imagen":"./multimedia/infantil2.jpg"
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica2.jpg"
+},{
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica3.jpg"
+},{
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica4.jpg"
+},{
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica5.jpg"
+},{
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica6.jpg"
+},{
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica7.jpg"
+},{
+    "nombre":"Torta Tematica",
+    "descripcion":"tematica",
+    "imagen":"./multimedia/tematica8.jpg"
 },{
     "nombre":"Torta Tres Pisos",
     "descripcion":"tresPisos",
@@ -66,12 +90,12 @@
     "descripcion":"tresPisos",
     "imagen":"./multimedia/tresPisos6.jpg"
 },{
-    "nombre":["Torta Tres Pisos","Torta Equipo"],
-    "descripcion":"equipo",
-    "imagen":"./multimedia/equipo1.jpg"
+    "nombre":"Torta Tres Pisos",
+    "descripcion":"tresPisos",
+    "imagen":"./multimedia/tresPisos7.jpg"
 },{
-    "nombre":["Torta Tres Pisos","Torta Equipo"],
-    "descripcion":"equipo",
-    "imagen":"./multimedia/equipo2.jpg"
+    "nombre":"Torta Tres Pisos",
+    "descripcion":"tresPisos",
+    "imagen":"./multimedia/tresPisos8.jpg"
 }
 ]

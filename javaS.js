@@ -55,14 +55,7 @@ const arrayProductos = [{
     descripcion: "Base crujiente de galletas mixtas, acompañado de un relleno helado inspirado en el chocolate Kinder y con pedazos del mismo y,por ultimo, unos detalles en Nutella",
     precio: 6000,
     imagen: "./multimedia/tortaKinder.jpg",
-},
-{
-    id: 8,
-    nombre: "Marroc",
-    descripcion: "Base de bizcocho de chocolate, a la que le continuan tres capas:dos de chocolate y una inpirada en el relleno del marroc.Detalles en nutella en la parte superior.",
-    precio: 6000,
-    imagen: "./multimedia/tortaMarroc.jpg",
-},
+}
 ];
 
 //CONSTRUCTOR
@@ -271,7 +264,7 @@ const selectInspiracion=document.getElementById("selectInspiracion");
 const buscar=document.getElementById("buscar");
 const contInspiraciones=document.getElementById("contInspiraciones");
 
-//funcion que me va a mostrar una vez que haga la seleccion y busque
+//funcion que me va a mostrar la seleccion 
 function crearHTML(array){
     contInspiraciones.innerHTML="";
     for (const torta of array) {
@@ -282,6 +275,14 @@ function crearHTML(array){
     }
     
 }
+function extraerInfo(){
+    fetch("./inspiracion.json")
+    .then((response)=>response.json())
+    .then((data)=>{
+        crearHTML(tortaFiltro(data));
+})}
+extraerInfo();
+
 //Funcion que filtra segun la seleccion
 function tortaFiltro(array,torta) {
     torta=selectInspiracion.value;
@@ -296,9 +297,5 @@ function tortaFiltro(array,torta) {
 
 //evento
 buscar.addEventListener("click",()=>{
-    fetch("./inspiracion.json")
-    .then((response)=>response.json())
-    .then((data)=>{
-        crearHTML(tortaFiltro(data));
-    })
+    extraerInfo();
 })
