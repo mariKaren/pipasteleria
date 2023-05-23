@@ -6,7 +6,7 @@
   outline: none;
 }
 
-h2 {
+.tituloSecciones {
   color: #FBF9F9;
   font-family: "Ibarra Real Nova", serif;
   font-size: 2.5rem;
@@ -18,7 +18,7 @@ header {
 }
 header .header {
   height: 100%;
-  background-image: url(../multimedia/cinco.jpg);
+  background-image: url(../multimedia/portadaPrincipal.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -64,8 +64,7 @@ h1 {
   justify-content: space-around;
 }
 #contProductos .card {
-  width: 320;
-  height: 550px;
+  height: 570px;
   text-align: center;
   margin-bottom: 30px;
   margin-right: 10px;
@@ -74,8 +73,8 @@ h1 {
 }
 #contProductos .card .imgTorta {
   margin-top: 10px;
-  height: 40%;
-  width: 80%;
+  height: 50%;
+  width: 90%;
 }
 #contProductos .card .card-title {
   /* font-family: $letraTitulo; */
@@ -88,11 +87,11 @@ h1 {
   background-color: #65ADA6;
   color: white;
 }
-#contProductos .card .precioAgregar0, #contProductos .card .precioAgregar5, #contProductos .card .precioAgregar4 {
-  padding-top: 20%;
+#contProductos .card .infoCard {
+  height: 75%;
 }
-#contProductos .card .precioAgregar3, #contProductos .card .precioAgregar7, #contProductos .card .precioAgregar8 {
-  padding-top: 10%;
+#contProductos .card .precioAgregar p {
+  margin-bottom: 3px;
 }
 
 .contPersonalizadas .tituloPpersonalizadas {
@@ -100,7 +99,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../multimedia/siete.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../multimedia/portadaInspiraciones.jpg);
   background-size: cover;
 }
 .contPersonalizadas .personalizadas {
@@ -157,7 +156,7 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-image: url(../multimedia/seis.jpg);
+  background-image: url(../multimedia/portadaCarrito.jpg);
   background-position: center;
 }
 

@@ -22,7 +22,7 @@ $colormarron:#AD8776;
 }
 
 //titulos
-h2{
+.tituloSecciones{
     color: $colorgris;
     font-family: $letraTitulo;
     font-size: 2.5rem;
@@ -36,7 +36,7 @@ header {
     height: 150px;
     .header {
         height: 100%;
-        background-image: url(../multimedia/cinco.jpg);
+        background-image: url(../multimedia/portadaPrincipal.jpg);
         background-size: cover;
         background-position: center;
         div{
@@ -88,8 +88,7 @@ h1{
     justify-content: space-around;
 
     .card {
-        width: 320;
-        height: 550px;
+        height: 570px;
         text-align: center;
         margin-bottom: 30px;
         margin-right: 10px;
@@ -97,8 +96,8 @@ h1{
         font-family: $letraUno;
         .imgTorta{
             margin-top: 10px;
-            height: 40%;
-            width: 80%;
+            height: 50%;
+            width: 90%;
         }
         .card-title{
             /* font-family: $letraTitulo; */
@@ -112,11 +111,13 @@ h1{
             background-color: $colorverde;
             color: white;
         }
-        .precioAgregar0,.precioAgregar5,.precioAgregar4{
-            padding-top: 20%;
+        .infoCard{
+            height: 75%;
         }
-        .precioAgregar3, .precioAgregar7,.precioAgregar8{
-            padding-top: 10%;
+        .precioAgregar{
+            p{
+                margin-bottom:3px;
+            }
         }
         
     }
@@ -133,7 +134,7 @@ h1{
         background-image:linear-gradient(
             rgba(black, 0.5),
             rgba(black, 0.5)
-          ), url(../multimedia/siete.jpg);
+          ), url(../multimedia/portadaInspiraciones.jpg);
         background-size: cover;
     }
     .personalizadas{
@@ -194,7 +195,7 @@ h1{
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-image:url(../multimedia/seis.jpg);
+    background-image:url(../multimedia/portadaCarrito.jpg);
     background-position: center;
     
 }

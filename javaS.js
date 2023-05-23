@@ -39,21 +39,21 @@ const arrayProductos = [{
     id: 5,
     nombre: "Choco Moka",
     descripcion: "Una fina base de chocolate solida, seguida de una crema de chocolate y una de cafe, bañada con caramelo",
-    precio: 6000,
+    precio: 7000,
     imagen: "./multimedia/tortaChocoMoka.jpg",
 },
 {
     id: 6,
     nombre: "Ferrero",
-    descripcion: "Una base fina y solida de galleta de chocolate, acompañada con una capa pequeña de dulce de leche y el relleno clasico del Ferrero. Por ultimo, una capa de chocolate y detalles en dulce de leche",
-    precio: 6000,
+    descripcion: "Una base fina de galleta de chocolate,una capa pequeña de dulce de leche y el relleno clasico del Ferrero,con una capa superior de chocolate y detalles en dulce de leche",
+    precio: 6800,
     imagen: "./multimedia/tortaFerrero.jpg",
 },
 {
     id: 7,
     nombre: "Kinder",
     descripcion: "Base crujiente de galletas mixtas, acompañado de un relleno helado inspirado en el chocolate Kinder y con pedazos del mismo y,por ultimo, unos detalles en Nutella",
-    precio: 6000,
+    precio: 6500,
     imagen: "./multimedia/tortaKinder.jpg",
 }
 ];
@@ -83,28 +83,37 @@ const carrito = [];
 
 //Voy a crear de manera dinamica las card de los productos en una funcion y la inicio al final
 function imprimirenHTML(array) {
-const contProductos = document.getElementById("contProductos");
-for (const caja of array) {
-    contProductos.innerHTML += `
-<div class="card" style="width: 18rem;">
-    <img src="${caja.imagen}" class="card-img-top imgTorta mx-auto d-block" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">${caja.nombre}</h5>
-        <p class="card-text card-text-descripcion">${caja.descripcion}</p>
-        <div class="precioAgregar${caja.id}">
-        <p class="card-text">$${caja.precio}</p>
-        <button id=${caja.id} class="btn btnAgregarCarrito">Agregar al carrito</button>
-        </div>
-    </div>
-</div>`;
-}
+    const contProductos = document.getElementById("contProductos");
+    for (const caja of array) {
+        contProductos.innerHTML += `
+            <div class="card" style="width: 18rem;">
+                <img src="${caja.imagen}" class="card-img-top imgTorta mx-auto d-block" alt="...">
+                <div class="card-body">
+                    <div class="infoCard">
+                        <h5 class="card-title">${caja.nombre}</h5>
+                        <p class="card-text card-text-descripcion">${caja.descripcion}</p>
+                    </div>
+                    <div class="precioAgregar">
+                        <p class="card-text">$${caja.precio}</p>
+                        <button id=${caja.id} class="btn btnAgregarCarrito">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>`;
+    }
 
-for (const caja of array) {
-    let btnCaja = document.getElementById(`${caja.id}`);
-    btnCaja.addEventListener("click", () => agregarAlCarrito(caja.id));
-}
-
-
+    for (const caja of array) {
+        let btnCaja = document.getElementById(`${caja.id}`);
+        btnCaja.addEventListener("click", () => agregarAlCarrito(caja.id));
+        btnCaja.addEventListener("click",()=>{
+            Swal.fire({
+                icon: 'success',
+                iconColor:"#65ADA6",
+                title: 'Agregado al carrito',
+                showConfirmButton: false,
+                timer: 1000,
+            })
+        }) 
+    }
 }
 
 // Voy a ir armando el carrito
@@ -115,19 +124,19 @@ const circuloCarrito=document.getElementById("circuloCarrito");
 
 //Voy a determinar que va a hacer la funcion agregar al carrito
 function agregarAlCarrito(idCaja) {
-const buscarCarrito = carrito.find((el) => el.id === idCaja);
-if (buscarCarrito) {
-    buscarCarrito.agregarCantidad();
-} else {
-    const buscarCajas = arrayProductos.find((el) => el.id === idCaja);
-    carrito.push(
-        new Producto(buscarCajas.id, buscarCajas.nombre, buscarCajas.precio, 1)
-    );
-}
-for (const caja of carrito) {
-    caja.multiplicarCantidad();
-}
-crearCarrito();
+    const buscarCarrito = carrito.find((el) => el.id === idCaja);
+    if (buscarCarrito) {
+        buscarCarrito.agregarCantidad();
+    } else {
+        const buscarCajas = arrayProductos.find((el) => el.id === idCaja);
+        carrito.push(
+            new Producto(buscarCajas.id, buscarCajas.nombre, buscarCajas.precio, 1)
+        );
+    }
+    for (const caja of carrito) {
+        caja.multiplicarCantidad();
+    }
+    crearCarrito();
 }
 
 //Obtengo el precio final del carrito
@@ -140,7 +149,7 @@ function crearCarrito() {
 let total = obtenerPrecioTotal(carrito);
 if (carrito.length >= 1) {
     circuloCarrito.className= " circuloCarrito position-absolute top-0 start-100 translate-middle p-2 rounded-circle";
-    tituloCarrito.innerHTML=`<h2>Carrito de compras</h2>`;
+    tituloCarrito.innerHTML=`<h2 class="tituloSecciones">Carrito de compras</h2>`;
     tituloCarrito.className="tituloCarrito";
     localStorage.setItem("carrito", JSON.stringify(carrito));
     contPCarrito.className="contPCarrito";
@@ -203,7 +212,43 @@ if (carrito.length >= 1) {
         borrarProducto.addEventListener("click", () => eliminarProducto(carrito));
     }
     let borrarCarrito = document.getElementById("borrarCarrito");
-    borrarCarrito.addEventListener("click", () => eliminarCarrito(carrito));
+    let confirmarCarrito=document.getElementById("confirmarCarrito");
+    borrarCarrito.addEventListener("click",()=>{
+        Swal.fire({
+            title: 'Está seguro de eliminar el carrito?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, seguro',
+            confirmButtonColor:"#65ADA6",
+            cancelButtonText: 'No, no quiero',
+            cancelButtonColor:"#FBD6C5",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                eliminarCarrito(carrito);
+                Swal.fire({
+                    title: 'Borrado!',
+                    width:"350px",
+                    icon: 'success',
+                    iconColor:"#65ADA6",
+                    confirmButtonColor:"#65ADA6",
+                    text: 'El carrito ha sido borrado'
+                })
+            }
+            })
+    });
+    confirmarCarrito.addEventListener("click",()=>{
+        Swal.fire({
+            title: 'Confirmado!',
+            text: 'Link que redirecciona al wsp de Pipasteleria.',
+            imageUrl: './multimedia/logo.png',
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            confirmButtonColor:"#65ADA6",
+          })
+    })
+
+
 } else {
     circuloCarrito.classList.remove("circuloCarrito","position-absolute", "top-0", "start-100", "translate-middle", "p-2", "rounded-circle");
     tituloCarrito.innerHTML = "";
@@ -257,6 +302,22 @@ if (carritoEnStorage) {
 imprimirenHTML(arrayProductos);
 buscarEnStorage();
 crearCarrito();
+
+//IR A CARRITO
+const iraCarrito=document.getElementById("iraCarrito");
+iraCarrito.addEventListener("click",()=>{
+    if (carrito.length==0) {
+        iraCarrito.href="#";
+        Swal.fire({
+            title: 'El carrito esta vacío',
+            confirmButtonColor:"#65ADA6",
+            width:"400px"
+          })
+    }else{
+        iraCarrito.href="#carrito";
+    }
+})
+
 
 // SECCION INSPIRACIONES
 //primero capturo elemntos
