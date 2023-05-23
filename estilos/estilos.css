@@ -34,7 +34,7 @@ header .header .logo {
 }
 header .header .logo img {
   height: 95%;
-  width: auto;
+  width: 13.5%;
 }
 header .header .iconoCarrito {
   display: flex;
