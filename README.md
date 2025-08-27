@@ -28,7 +28,7 @@ Mi versión incluye una **sección de tortas clásicas** con carrito de compras,
 ## 🌐 Demo en vivo
 [Miwuki Pet Shelter - Demo](https://marikaren.github.io/pipasteleria/)
 
---
+---
 
 ## Autor
 
